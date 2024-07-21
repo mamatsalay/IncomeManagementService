@@ -1,4 +1,4 @@
-package uz.mamatsalay.incomemanagementservice.filter;
+package uz.mamatsalay.incomemanagementservice.config;
 
 
 import jakarta.servlet.FilterChain;

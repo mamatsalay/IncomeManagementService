@@ -4,12 +4,10 @@ package uz.mamatsalay.incomemanagementservice.model;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "incomes")
 @Getter
 @Setter
 public class Income {
@@ -18,17 +16,16 @@ public class Income {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "amount", nullable = false)
+    @Column
     private Double amount;
 
-    @Column(name = "description")
+    @Column
     private String description;
 
-    @Column(name = "date", nullable = false)
+    @Column
     private LocalDateTime date;
 
     @ManyToOne
-    @JoinColumn(name = "users_id")
     private User user;
 
 }

@@ -2,6 +2,7 @@ package uz.mamatsalay.incomemanagementservice.model;
 
 import jakarta.persistence.*;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -14,6 +15,7 @@ import java.util.List;
 @Table(name = "users")
 @Getter
 @Setter
+@NoArgsConstructor
 public class User implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -35,9 +37,6 @@ public class User implements UserDetails {
         this.username = username;
         this.email = email;
         this.password = password;
-    }
-
-    public User(){
     }
 
     @Override

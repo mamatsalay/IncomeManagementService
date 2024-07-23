@@ -16,7 +16,7 @@
 
 * Income and Expense Trackers
 
-### How to start the server
+### How to start the server and test the api
 
 1. Need to download the source code
 2. Start the server in IntelliJ IDEA

@@ -26,6 +26,7 @@ public class Income {
     private LocalDateTime date;
 
     @ManyToOne
+    @JoinColumn(name = "user_id")
     private User user;
 
 }

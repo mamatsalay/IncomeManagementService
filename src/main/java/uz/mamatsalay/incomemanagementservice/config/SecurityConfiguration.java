@@ -18,6 +18,18 @@ import java.util.List;
 @Configuration
 @EnableWebSecurity
 public class SecurityConfiguration {
+
+    private final String[] PUBLIC_URLS = {
+            "/v2/api-docs",
+            "/configuration/ui",
+            "/configuration/security",
+            "/swagger-ui.html",
+            "/webjars/**",
+            "/v3/api-docs/**",
+            "/swagger-ui/**",
+            "/swagger-resources",
+            "/swagger-resources/**"
+    };
     private final AuthenticationProvider authenticationProvider;
     private final JwtAuthenticationFilter jwtAuthenticationFilter;
 
@@ -35,6 +47,7 @@ public class SecurityConfiguration {
                 .csrf(c -> c.disable())
                 .authorizeHttpRequests(authorize -> authorize
                         .requestMatchers("/auth/**").permitAll()
+                        .requestMatchers(PUBLIC_URLS).permitAll()
                         .anyRequest().authenticated()
                 )
                 .sessionManagement(session -> session
